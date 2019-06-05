@@ -1,7 +1,8 @@
+// 设置本地存储
 let util = {
     setlocal: (key, value) => {
-        localStorage[key] = JSON.stringify(value)
+        localStorage[key] = value;
     },
-    getlocal: (key) => JSON.parse(localStorage[key])
-}
-export default util
+    getlocal: key => localStorage[key],
+};
+export default util;

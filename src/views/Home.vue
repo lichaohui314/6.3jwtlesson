@@ -1,20 +1,16 @@
 <template>
   <div class="home">
-    <img alt="Vue logo"
-         src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    首页
+    用户名:{{nickname}}
+    <Spin v-if='showloading'
+          fix>加载中</Spin>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import { mapState } from "vuex";
 export default {
   name: "home",
-  components: {
-    HelloWorld
+  computed: {
+    ...mapState(["nickname", "showloading"])
   }
 };
 </script>
